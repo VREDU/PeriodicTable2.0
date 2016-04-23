@@ -1,0 +1,17 @@
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/obj/Debug/Assembly-CSharp.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/UnityEngine.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/UnityEditor.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Mono.Cecil.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Unity.DataContract.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/martinmarkenson/Dropbox/VRedu/marty/Periodic Table/Temp/bin/Debug/Mono.Cecil.Mdb.dll
