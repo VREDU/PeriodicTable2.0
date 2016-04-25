@@ -77,8 +77,9 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Scripts\elementManager.cs" />
      <Compile Include="Assets\Scripts\elementNameManager.cs" />
-     <Compile Include="Assets\planeManager.cs" />
-     <Compile Include="Assets\raycastTest.cs" />
+     <Compile Include="Assets\Scripts\planeManager.cs" />
+     <Compile Include="Assets\Scripts\raycastTest.cs" />
+     <Compile Include="Assets\atomManager.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
