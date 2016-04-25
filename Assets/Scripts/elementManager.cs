@@ -9,12 +9,14 @@ public class elementManager : MonoBehaviour {
 	public Rigidbody atomPrefab;
 	private Transform element;
 	public bool atomSelected;
+	private Vector3 offset;
 	// Use this for initialization
 	void Start () {
 		element = GetComponent<Transform> ();
 		atomSelected = false;
+		offset = new Vector3 (0, 0, -1);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -32,7 +34,7 @@ public class elementManager : MonoBehaviour {
 	public void selectElement(){
 		if (atomSelected == false) {
 			Rigidbody atomInstance;
-			atomInstance = Instantiate (atomPrefab, element.position, element.rotation) as Rigidbody;
+			atomInstance = Instantiate (atomPrefab, element.position + offset, element.rotation) as Rigidbody;
 			atomSelected = true;
 		}
 	}
