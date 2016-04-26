@@ -3,17 +3,21 @@ using System.Collections;
 
 public class atomManager : MonoBehaviour {
 	public float step, speed;
-	// Use this for initialization
+	public GameObject landingZonge;
+
 	void Start () {
-		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		speed = 1.0f;
 		step = speed * Time.deltaTime;
-
+		if(raycastTest.gazeMovement==true) {
 			Debug.Log (raycastTest.hitPoint);
 			transform.position = Vector3.MoveTowards (transform.position, raycastTest.hitPoint, step);
 		}
 	}
+
+	/*void onTriggerStay (Collider other) {
+		atom.inLandingZone = true;
+	}*/
+}
