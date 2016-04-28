@@ -12,6 +12,7 @@ public class landingManager : MonoBehaviour {
 	}
 
 	void Update () {
+		//not sure if update is the best way to do this??
 		step = speed * Time.deltaTime;
 		if (enter == true) {
 			atom.transform.position = Vector3.MoveTowards (atom.transform.position, landingPoint.transform.position, step);
@@ -19,7 +20,6 @@ public class landingManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		//Debug.Log (other.gameObject.name);
 		gazeMovementManager.gazeMovement = false;
 		atom = other;
 		enter = true;

@@ -7,7 +7,6 @@ public class elementManager : MonoBehaviour {
 	public string elementName;
 	public Text elementText;
 	public Rigidbody atomPrefab;
-	public GameObject craftingPlanePrefab, craftingZonePrefab;
 	private Transform element;
 	private bool atomSelected;
 	private Vector3 offset;
@@ -29,9 +28,7 @@ public class elementManager : MonoBehaviour {
 	public void selectElement() {
 		if (atomSelected == false) {
 			Instantiate (atomPrefab, element.position + offset, element.rotation);
-			Instantiate (craftingPlanePrefab, new Vector3 (0, 0, 4.8f), Quaternion.Euler (90, 0, 0));
-			Instantiate (craftingZonePrefab, new Vector3 (0, -1.8f, 6), Quaternion.Euler (270, 0, 0));
-
+			GameObject.FindGameObjectWithTag("craftingZone").GetComponent<craftingManager>().createGazePlane();
 			atomSelected = true;
 			gazeMovementManager.gazeMovement = true;
 		}
