@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class raycastTest : MonoBehaviour {
+public class gazeMovementManager : MonoBehaviour {
 	public static Vector3 hitPoint; //location of collision from the ray attached to main camera
 	public static bool gazeMovement; //flag for objects controlled by users gaze
 	public float speed;
@@ -9,7 +9,7 @@ public class raycastTest : MonoBehaviour {
 	void Start () {
 		gazeMovement = false;
 	}
-		
+
 	void Update () {
 		RaycastHit hit;
 		if (gazeMovement==true) {

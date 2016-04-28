@@ -2,22 +2,16 @@
 using System.Collections;
 
 public class atomManager : MonoBehaviour {
-	public float step, speed;
+	public float speed; //speed object approaches gaze
+	private float step;
 
 	void Start () {
 	}
 
 	void Update () {
-		speed = 1.0f;
 		step = speed * Time.deltaTime;
-		if(raycastTest.gazeMovement==true) {
-			transform.position = Vector3.MoveTowards (transform.position, raycastTest.hitPoint, step);
+		if(gazeMovementManager.gazeMovement==true) {
+			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
 		}
-	}
-
-	void OnTriggerEnter (Collider other) {
-		//Debug.Log ("On Trigger Enter (atom)");
-		//raycastTest.gazeMovement = false;
-		//transform.position
 	}
 }
