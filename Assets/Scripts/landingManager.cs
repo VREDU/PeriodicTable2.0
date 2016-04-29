@@ -21,6 +21,8 @@ public class landingManager : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		gazeMovementManager.gazeMovement = false;
+		elementManager.atomSelected = false;
+		Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
 		atom = other;
 		enter = true;
 	}
