@@ -6,7 +6,7 @@ public class elementManager : MonoBehaviour {
 	public int atomicNumber;
 	public string elementName;
 	public Text elementText;
-	public Rigidbody atomPrefab;
+	public GameObject atomPrefab;
 	private Transform element;
 	public static bool atomSelected;
 	private Vector3 offset;
@@ -34,7 +34,7 @@ public class elementManager : MonoBehaviour {
 			Instantiate (atomPrefab, element.position + offset, element.rotation);
 			GameObject.FindGameObjectWithTag("craftingZone").GetComponent<craftingManager>().createGazePlane();
 			atomSelected = true;
-			gazeMovementManager.gazeMovement = true;
+			atomPrefab.GetComponent<atomManager>().moveMode(true);
 		}
 	}
 }
