@@ -30,7 +30,11 @@ public class atomManager : MonoBehaviour {
 
 	public void switchGazeMode() {
 		gazeMovementManager.gazeMovement = !gazeMovementManager.gazeMovement;
-		stable = !stable;
+		changeStable (!stable);
+	}
+
+	public void changeStable(bool isStable) {
+		stable = isStable;
 	}
 
 	public void moveMode(bool enabled) {

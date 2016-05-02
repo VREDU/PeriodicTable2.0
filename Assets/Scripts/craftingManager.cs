@@ -26,10 +26,12 @@ public class craftingManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		other.GetComponent<atomManager> ().moveMode (false);
+		atom = other;
+		atom.GetComponent<atomManager> ().moveMode (false);
+		enter = true;
+		atom.GetComponent<atomManager> ().changeStable (true);
 		//elementManager.atomSelected = false;
 		Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
-		atom = other;
-		enter = true;
+
 	}
 }
