@@ -24,6 +24,7 @@ public class atomManager : MonoBehaviour {
 		if (gazeMovementManager.gazeMovement==false && stable == false) {
 			Debug.Log ("destroy");
 			Destroy (gameObject);
+			Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
 		}
 	}
 

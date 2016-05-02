@@ -8,12 +8,12 @@ public class elementManager : MonoBehaviour {
 	public Text elementText;
 	public GameObject atomPrefab;
 	private Transform element;
-	public static bool atomSelected;
+	//public static bool atomSelected;
 	private Vector3 offset;
 
 	void Start () {
 		element = GetComponent<Transform> ();
-		atomSelected = false;
+		//atomSelected = false;
 		offset = new Vector3 (0, 0, -1);
 		elementText.text = "";
 	}
@@ -30,11 +30,11 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-		if (atomSelected == false) {
+		//if (atomSelected == false) {
 			Instantiate (atomPrefab, element.position + offset, element.rotation);
 			GameObject.FindGameObjectWithTag("craftingZone").GetComponent<craftingManager>().createGazePlane();
-			atomSelected = true;
+			//atomSelected = true;
 			atomPrefab.GetComponent<atomManager>().moveMode(true);
-		}
+		//}
 	}
 }
