@@ -25,13 +25,13 @@ public class craftingManager : MonoBehaviour {
 		Instantiate (craftingPlanePrefab, new Vector3 (-1, 0, 5), Quaternion.Euler (90, 0, 0));
 	}
 
-	void OnTriggerEnter (Collider other) {
-		atom = other;
+	/*void OnCollisionEnter (Collision other) {
+		Debug.Log ("Collision");
+		atom = other.collider;
 		atom.GetComponent<atomManager> ().moveMode (false);
 		enter = true;
 		atom.GetComponent<atomManager> ().changeStable (true);
-		//elementManager.atomSelected = false;
 		Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
 
-	}
+	}*/
 }

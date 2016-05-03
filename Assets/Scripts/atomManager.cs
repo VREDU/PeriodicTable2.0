@@ -4,7 +4,7 @@ using System.Collections;
 public class atomManager : MonoBehaviour {
 	public float speed; //speed object approaches gaze
 	private float step;
-	private bool moveControl;
+	private bool moveControl, test1;
 	public bool stable;
 	private Vector3 hitPoint;
 
@@ -14,15 +14,18 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("GazeMovement:" + gazeMovementManager.gazeMovement);
-		Debug.Log ("stable:" + stable);
+		//Debug.Log ("test1:" + test1);
+		//Debug.Log ("moveControl:" + moveControl);
 
-		if (gazeMovementManager.gazeMovement==true && moveControl== true) {
+		if (gazeMovementManager.gazeMovement == true && moveControl == true) {
 			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
 		}
 
-		if (gazeMovementManager.gazeMovement==false && stable == false) {
-			Debug.Log ("destroy");
+		/*if (test1==true) {
+			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
+		}*/
+
+		if (gazeMovementManager.gazeMovement == false && stable == false) {
 			Destroy (gameObject);
 			Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
 		}
@@ -39,5 +42,18 @@ public class atomManager : MonoBehaviour {
 
 	public void moveMode(bool enabled) {
 		moveControl = enabled;
+	}
+		
+	public void OnCollisionEnter(Collision c) {
+		if (c.rigidbody != null) {
+			var joint = gameObject.AddComponent<FixedJoint> ();
+			joint.connectedBody = c.rigidbody;
+			moveControl = false;
+			test1 = true;
+		}
+	}
+
+	public bool getTest1() {
+		return test1;
 	}
 }
