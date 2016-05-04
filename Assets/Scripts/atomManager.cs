@@ -4,7 +4,7 @@ using System.Collections;
 public class atomManager : MonoBehaviour {
 	public float speed; //speed object approaches gaze
 	private float step;
-	private bool moveControl, test1;
+	private bool moveControl, compound;
 	public bool stable;
 	private Vector3 hitPoint;
 
@@ -16,6 +16,7 @@ public class atomManager : MonoBehaviour {
 	void Update () {
 		//Debug.Log ("test1:" + test1);
 		//Debug.Log ("moveControl:" + moveControl);
+		Debug.Log("stable:" + stable);
 
 		if (gazeMovementManager.gazeMovement == true && moveControl == true) {
 			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
@@ -49,11 +50,11 @@ public class atomManager : MonoBehaviour {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
-			test1 = true;
+			compound = true;
 		}
 	}
 
-	public bool getTest1() {
-		return test1;
+	public bool isCompound() {
+		return compound;
 	}
 }
