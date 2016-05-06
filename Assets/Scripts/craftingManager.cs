@@ -28,7 +28,7 @@ public class craftingManager : MonoBehaviour {
 		atom = other;
 		atom.GetComponent<atomManager> ().moveMode (false);
 		atom.GetComponent<atomManager> ().changeStable (true);
-		Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
+		Destroy(GameObject.FindGameObjectWithTag ("gazePlane"));
 		enter = true;
 	}
 }

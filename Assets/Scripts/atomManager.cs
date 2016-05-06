@@ -14,31 +14,20 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("Stable:" + stable);
-		Debug.Log ("Move Control:" + moveControl);
-
 		if (moveControl == true) {
-			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
+			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint, step);
 		}
-
 		if (stable == false && moveControl == false) {
 			Destroy (gameObject);
 		}
-
-		if (GameObject.FindWithTag ("craftingPlane") == null) {
+		if (GameObject.FindWithTag ("gazePlane") == null) {
 			if (moveControl == true) {
-				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(1,10), Random.Range(1,10), Random.Range(1,10), ForceMode.Impulse);
+				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-10,10), Random.Range(-10,10), Random.Range(-10,10), ForceMode.Impulse);
 				moveControl = false;
 			}
 		}
 	}
 			
-	
-
-	public void switchGazeMode() {
-		gazeMovementManager.gazeMovement = !gazeMovementManager.gazeMovement;
-		changeStable (!stable);
-	}
 
 	public void changeStable(bool isStable) {
 		stable = isStable;
@@ -54,7 +43,7 @@ public class atomManager : MonoBehaviour {
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
 			compound = true;
-			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(1,10), Random.Range(1,10), Random.Range(1,10), ForceMode.Impulse);
+			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-10,10), Random.Range(-10,10), Random.Range(-10,10), ForceMode.Impulse);
 		}
 	}
 

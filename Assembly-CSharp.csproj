@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\craftingManager.cs" />
      <Compile Include="Assets\Scripts\elementManager.cs" />
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
+     <Compile Include="Assets\Scripts\rayCastManager.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
