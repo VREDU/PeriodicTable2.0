@@ -14,23 +14,26 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		//Debug.Log ("test1:" + test1);
-		//Debug.Log ("moveControl:" + moveControl);
-		Debug.Log("stable:" + stable);
+		Debug.Log ("Stable:" + stable);
+		Debug.Log ("Move Control:" + moveControl);
 
-		if (gazeMovementManager.gazeMovement == true && moveControl == true) {
+		if (moveControl == true) {
 			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
 		}
 
-		/*if (test1==true) {
-			transform.position = Vector3.MoveTowards (transform.position, gazeMovementManager.hitPoint, step);
-		}*/
-
-		if (gazeMovementManager.gazeMovement == false && stable == false) {
+		if (stable == false && moveControl == false) {
 			Destroy (gameObject);
-			Destroy(GameObject.FindGameObjectWithTag ("craftingPlane"));
+		}
+
+		if (GameObject.FindWithTag ("craftingPlane") == null) {
+			if (moveControl == true) {
+				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(1,10), Random.Range(1,10), Random.Range(1,10), ForceMode.Impulse);
+				moveControl = false;
+			}
 		}
 	}
+			
+	
 
 	public void switchGazeMode() {
 		gazeMovementManager.gazeMovement = !gazeMovementManager.gazeMovement;
@@ -46,11 +49,12 @@ public class atomManager : MonoBehaviour {
 	}
 		
 	public void OnCollisionEnter(Collision c) {
-		if (c.rigidbody != null) {
+		if (c.rigidbody != null && compound == false) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
 			compound = true;
+			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(1,10), Random.Range(1,10), Random.Range(1,10), ForceMode.Impulse);
 		}
 	}
 

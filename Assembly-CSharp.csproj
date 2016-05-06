@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DF95E2B6-14E3-E141-9647-6B30745C35FB}</ProjectGuid>
+    <ProjectGuid>{920A7C76-BB52-19E2-B378-6A69B2C44F72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\craftingManager.cs" />
      <Compile Include="Assets\Scripts\elementManager.cs" />
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
-     <Compile Include="Assets\Scripts\raycastTest.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />

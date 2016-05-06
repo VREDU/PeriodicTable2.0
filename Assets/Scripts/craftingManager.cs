@@ -21,10 +21,6 @@ public class craftingManager : MonoBehaviour {
 			if (compound == false) {//this needs to change
 				atom.transform.position = Vector3.MoveTowards (atom.transform.position, landingPoint.transform.position, step);
 			}
-			if (compound == true) {
-				atom.attachedRigidbody.AddForce (1, 1, 1);
-			}
-
 		}
 	}
 

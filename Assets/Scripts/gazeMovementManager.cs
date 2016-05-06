@@ -8,19 +8,18 @@ public class gazeMovementManager : MonoBehaviour {
 	private int layerMask;
 
 	void Start () {
-		gazeMovement = true;
 		layerMask = 1 << 12;
 	}
 
 	void Update () {
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, transform.forward, out hit, layerMask)) {
+		if (Physics.Raycast (transform.position, transform.forward, out hit, 100f, layerMask)) {
 			hitPoint = hit.point;
 		}
 	}
 
-	public void switchGazeMode() {
-		gazeMovement = !gazeMovement;
+	public void destroyGazeMode() {
+			Destroy (GameObject.FindGameObjectWithTag ("craftingPlane"));
 	}
 
 	public void createGazePlane() {

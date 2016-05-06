@@ -25,8 +25,7 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-			Instantiate (atomPrefab, element.position + offset, element.rotation);
 		    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<gazeMovementManager>().createGazePlane();
-			atomPrefab.GetComponent<atomManager>().moveMode(true);
+			Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
 }
