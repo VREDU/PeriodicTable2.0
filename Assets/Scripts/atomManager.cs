@@ -22,7 +22,7 @@ public class atomManager : MonoBehaviour {
 		}
 		if (GameObject.FindWithTag ("gazePlane") == null) {
 			if (moveControl == true) {
-				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-10,10), Random.Range(-10,10), Random.Range(-10,10), ForceMode.Impulse);
+				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
 				moveControl = false;
 			}
 		}
@@ -43,7 +43,7 @@ public class atomManager : MonoBehaviour {
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
 			compound = true;
-			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-10,10), Random.Range(-10,10), Random.Range(-10,10), ForceMode.Impulse);
+			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
 		}
 	}
 
