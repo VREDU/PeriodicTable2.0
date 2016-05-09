@@ -3,6 +3,7 @@ using System.Collections;
 
 public class atomManager : MonoBehaviour {
 	public float speed; //speed object approaches gaze
+	public int atomicNumber;
 	private float step;
 	private bool moveControl, compound;
 	public bool stable;
@@ -38,16 +39,21 @@ public class atomManager : MonoBehaviour {
 	}
 		
 	public void OnCollisionEnter(Collision c) {
-		if (c.rigidbody != null && compound == false) {
+		if (c.rigidbody != null && compound == false && atomicNumber==1 && c.gameObject.GetComponent<atomManager>().getAtomicNumber()==1) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
 			compound = true;
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
+			canvasManager.gameOver = true;
 		}
 	}
 
 	public bool isCompound() {
 		return compound;
+	}
+
+	public int getAtomicNumber() {
+		return atomicNumber;
 	}
 }
