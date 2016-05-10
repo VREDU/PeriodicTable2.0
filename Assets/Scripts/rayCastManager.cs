@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class rayCastManager : MonoBehaviour {
-	public static Vector3 hitPoint; //location of collision from the ray attached to main camera
+	public static Vector3 hitPoint, direction; //location of collision from the ray attached to main camera
 	public static bool gazeMovement;
 	private int layerMask;
 
@@ -16,6 +16,7 @@ public class rayCastManager : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 100f, layerMask)) {
 			hitPoint = hit.point;
+			direction = transform.forward;
 		}
 	}
 }

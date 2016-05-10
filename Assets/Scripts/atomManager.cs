@@ -5,25 +5,27 @@ public class atomManager : MonoBehaviour {
 	public float speed; //speed object approaches gaze
 	public int atomicNumber;
 	private float step;
-	private bool moveControl, compound;
-	public bool stable;
-	private Vector3 hitPoint;
+	private bool moveControl;
+	public bool stable, compound, shooter;
+	private Vector3 hitPoint, offset;
 
 	void Start () {
 		moveControl = true;
 		step = speed * Time.deltaTime;
+		offset = new Vector3 (0, 0, 1);
 	}
 
 	void Update () {
 		if (moveControl == true) {
-			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint, step);
+			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + offset, step);
 		}
 		if (stable == false && moveControl == false) {
 			Destroy (gameObject);
 		}
 		if (GameObject.FindWithTag ("gazePlane") == null) {
 			if (moveControl == true) {
-				gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
+				//gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
+				gameObject.GetComponent<Rigidbody> ().AddForce (10*rayCastManager.direction, ForceMode.Impulse);
 				moveControl = false;
 			}
 		}
@@ -39,13 +41,17 @@ public class atomManager : MonoBehaviour {
 	}
 		
 	public void OnCollisionEnter(Collision c) {
-		if (c.rigidbody != null && compound == false && atomicNumber==1 && c.gameObject.GetComponent<atomManager>().getAtomicNumber()==1) {
+		if (c.rigidbody != null && atomicNumber==1 && c.gameObject.GetComponent<atomManager>().getAtomicNumber()==1 && !compound && !c.gameObject.GetComponent<atomManager>().isCompound()) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			moveControl = false;
 			compound = true;
-			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
-			canvasManager.gameOver = true;
+			c.gameObject.GetComponent<atomManager> ().setCompound (true);
+			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
+
+			if (shooter) {
+				canvasManager.score++;
+			}
 		}
 	}
 
@@ -53,7 +59,15 @@ public class atomManager : MonoBehaviour {
 		return compound;
 	}
 
+	public void setCompound(bool isCompound) {
+		compound = isCompound;
+	}
+
 	public int getAtomicNumber() {
 		return atomicNumber;
+	}
+
+	public bool isShooter() {
+		return shooter;
 	}
 }
