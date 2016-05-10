@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class canvasManager : MonoBehaviour {
 	public GameObject congrats;
@@ -16,6 +17,10 @@ public class canvasManager : MonoBehaviour {
 		if (gameOver) {
 			congrats.SetActive (true);
 		}
-	
+	}
+
+	public void playAgain() {
+		gameOver = false;
+		SceneManager.LoadScene(0);
 	}
 }
