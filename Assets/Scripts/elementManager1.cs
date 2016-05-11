@@ -9,6 +9,7 @@ public class elementManager1 : MonoBehaviour {
 	public GameObject atomPrefab;
 	private Transform element;
 	private Vector3 offset;
+	public static GameObject selectedElement;
 
 	void Start () {
 		element = GetComponent<Transform> ();
@@ -27,5 +28,7 @@ public class elementManager1 : MonoBehaviour {
 	public void selectElement() {
 		GameObject.FindGameObjectWithTag("gazePlaneHolder").GetComponent<gazeMovementManager>().createGazePlane();
 		Instantiate (atomPrefab, element.position + offset, element.rotation);
+		selectedElement = gameObject;
+		Debug.Log (selectedElement);
 	}
 }

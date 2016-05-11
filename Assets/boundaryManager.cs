@@ -16,6 +16,7 @@ public class boundaryManager : MonoBehaviour {
 		Debug.Log ("Collision");
 		if (other.gameObject.GetComponent<atomManager> ().isShooter ()) {
 			Destroy (other.gameObject);
+			elementManager.selectedElement.GetComponent<elementManager> ().reload ();
 		}
 	}
 }
