@@ -16,8 +16,8 @@ public class canvasManager : MonoBehaviour {
 	void Update () {
 		if (score>2) {
 			congrats.SetActive (true);
+			score = 0;
 		}
-		score = 0;
 	}
 
 	public void playAgain() {
