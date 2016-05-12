@@ -16,7 +16,7 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (moveControl == true) {
+		if (moveControl == true && shooter) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + offset, step);
 		}
 		if (stable == false && moveControl == false) {
@@ -52,6 +52,9 @@ public class atomManager : MonoBehaviour {
 			if (shooter) {
 				canvasManager.score++;
 			}
+			shooter = false;
+			c.gameObject.GetComponent<atomManager> ().setShooter (false);
+
 		}
 	}
 
@@ -69,5 +72,9 @@ public class atomManager : MonoBehaviour {
 
 	public bool isShooter() {
 		return shooter;
+	}
+
+	public void setShooter(bool isShooter) {
+		shooter = isShooter;
 	}
 }
