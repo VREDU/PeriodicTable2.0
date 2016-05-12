@@ -26,8 +26,8 @@ public class craftingManager : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		atom = other;
-		atom.GetComponent<atomManager> ().moveMode (false);
-		atom.GetComponent<atomManager> ().changeStable (true);
+		atom.GetComponent<atomManagerOld> ().moveMode (false);
+		atom.GetComponent<atomManagerOld> ().changeStable (true);
 		Destroy(GameObject.FindGameObjectWithTag ("gazePlane"));
 		enter = true;
 	}
