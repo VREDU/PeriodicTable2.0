@@ -16,6 +16,7 @@ public class gazeMovementManager : MonoBehaviour {
 	}
 
 	public void createGazePlane() {
-		Instantiate (craftingPlanePrefab, new Vector3 (-1.31f, 0, 5), Quaternion.Euler (90, 0, 0));
+		//Instantiate (craftingPlanePrefab, new Vector3 (-1.31f, 0, 5), Quaternion.Euler (90, 0, 0));
+		Instantiate (craftingPlanePrefab, new Vector3 (0, 0, 0), Quaternion.Euler (0, 0, 0));
 	}
 }
