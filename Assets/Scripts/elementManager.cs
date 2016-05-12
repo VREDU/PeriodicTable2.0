@@ -28,7 +28,7 @@ public class elementManager : MonoBehaviour {
 	public void selectElement() {
 		if (selectedElement != gameObject) {
 			GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazePlane ();
-			Instantiate (atomPrefab, atomSpawn.transform.position, element.rotation);
+			Instantiate (atomPrefab, element.position + offset, element.rotation);
 			selectedElement = gameObject;
 			Debug.Log (selectedElement);
 		}
@@ -36,6 +36,6 @@ public class elementManager : MonoBehaviour {
 
 	public void reload() {
 		GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazePlane ();
-		Instantiate (atomPrefab, atomSpawn.transform.position, element.rotation);
+		Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
 }
