@@ -77,14 +77,14 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Scripts\atomManager.cs" />
      <Compile Include="Assets\Scripts\backgroundAtomManager.cs" />
+     <Compile Include="Assets\Scripts\boundaryManager.cs" />
+     <Compile Include="Assets\Scripts\canvasManager.cs" />
      <Compile Include="Assets\Scripts\craftingManager.cs" />
      <Compile Include="Assets\Scripts\elementManager.cs" />
      <Compile Include="Assets\Scripts\elementManager1.cs" />
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
      <Compile Include="Assets\Scripts\rayCastManager.cs" />
-     <Compile Include="Assets\boundaryManager.cs" />
-     <Compile Include="Assets\canvasManager.cs" />
-     <Compile Include="Assets\scoreManager.cs" />
+     <Compile Include="Assets\Scripts\scoreManager.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />

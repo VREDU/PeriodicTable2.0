@@ -17,7 +17,7 @@ public class atomManager : MonoBehaviour {
 
 	void Update () {
 		if (moveControl == true && shooter) {
-			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
+			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction*2, step);
 		}
 		if (stable == false && moveControl == false) {
 			Destroy (gameObject);
