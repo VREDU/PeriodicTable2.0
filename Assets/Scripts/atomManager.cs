@@ -27,19 +27,19 @@ public class atomManager : MonoBehaviour {
 	}
 		
 	public void OnCollisionEnter(Collision c) {
+		//if it is another hydrogen atom that it is not a compound connect the atoms and add a random force
 		if (c.rigidbody != null && atomicNumber==1 && c.gameObject.GetComponent<atomManager>().getAtomicNumber()==1 && !compound && !c.gameObject.GetComponent<atomManager>().isCompound()) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			compound = true;
 			c.gameObject.GetComponent<atomManager> ().setCompound (true);
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
-
+			//if it was shot it will increase the molecules the user made
 			if (shooter) {
 				canvasManager.score++;
 			}
 			shooter = false;
 			c.gameObject.GetComponent<atomManager> ().setShooter (false);
-
 		}
 	}
 
@@ -53,14 +53,10 @@ public class atomManager : MonoBehaviour {
 		compound = isCompound;
 	}
 
-	public bool isShooter() {
-		return shooter;
-	}
-
 	public void setShooter(bool isShooter) {
 		shooter = isShooter;
 	}
-
+		
 	public int getAtomicNumber() {
 		return atomicNumber;
 	}
