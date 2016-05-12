@@ -17,15 +17,12 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("fired:"+fired);
 		if (shooter) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction*2, step);
 		}
-		if (GameObject.FindWithTag ("gazePlane") == null) {
-			if (fired == false) {
+		if (GameObject.FindWithTag ("gazePlane") == null && fired == false) {
 				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed*rayCastManager.direction, ForceMode.Impulse);
 				fired = true;
-			}
 		}
 	}
 		
