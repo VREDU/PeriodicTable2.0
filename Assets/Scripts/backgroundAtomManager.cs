@@ -5,7 +5,7 @@ public class backgroundAtomManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
+		gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-2,2), Random.Range(-2,2), Random.Range(-2,2), ForceMode.Impulse);
 	
 	}
 	

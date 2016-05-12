@@ -15,13 +15,13 @@ public class canvasManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Debug.Log ("Score:" + score);
-		if (score>5) {
+		if (score>2) {
 			congrats.SetActive (true);
 		}
 	}
 
 	public void playAgain() {
 		gameOver = false;
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(0);
 	}
 }
