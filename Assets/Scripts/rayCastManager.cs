@@ -17,7 +17,6 @@ public class rayCastManager : MonoBehaviour {
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 100f, layerMask)) {
 			hitPoint = hit.point;
 			direction = transform.forward;
-			Debug.Log (direction);
 		}
 	}
 }

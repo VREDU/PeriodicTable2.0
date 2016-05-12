@@ -4,38 +4,35 @@ using System.Collections;
 public class atomManager : MonoBehaviour {
 	public float speed; //speed object approaches gaze
 	public int atomicNumber;
+	private int fireSpeed;
 	private float step; //step = speed * Time.deltaTime
-	private bool moveControl; //flag if atom should move where user is looking
+	private bool fired; //flag if atom should move where user is looking
 	public bool compound, shooter; //compound is to see if hydrogen is attached to another hydrogen, shooter atoms are shot by user
 	private Vector3 hitPoint; //hitPoint is where the user is looking at
 
 	void Start () {
-		moveControl = true;
+		fired = false;
 		step = speed * Time.deltaTime;
+		fireSpeed = 18;
 	}
 
 	void Update () {
-		if (moveControl == true && shooter) {
+		Debug.Log ("fired:"+fired);
+		if (shooter) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction*2, step);
 		}
 		if (GameObject.FindWithTag ("gazePlane") == null) {
-			if (moveControl == true) {
-				//gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
-				gameObject.GetComponent<Rigidbody> ().AddForce (10*rayCastManager.direction, ForceMode.Impulse);
-				moveControl = false;
+			if (fired == false) {
+				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed*rayCastManager.direction, ForceMode.Impulse);
+				fired = true;
 			}
 		}
-	}
-
-	public void moveMode(bool enabled) {
-		moveControl = enabled;
 	}
 		
 	public void OnCollisionEnter(Collision c) {
 		if (c.rigidbody != null && atomicNumber==1 && c.gameObject.GetComponent<atomManager>().getAtomicNumber()==1 && !compound && !c.gameObject.GetComponent<atomManager>().isCompound()) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
-			moveControl = false;
 			compound = true;
 			c.gameObject.GetComponent<atomManager> ().setCompound (true);
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
@@ -49,6 +46,8 @@ public class atomManager : MonoBehaviour {
 		}
 	}
 
+	//Getters and Setters
+
 	public bool isCompound() {
 		return compound;
 	}
@@ -57,15 +56,15 @@ public class atomManager : MonoBehaviour {
 		compound = isCompound;
 	}
 
-	public int getAtomicNumber() {
-		return atomicNumber;
-	}
-
 	public bool isShooter() {
 		return shooter;
 	}
 
 	public void setShooter(bool isShooter) {
 		shooter = isShooter;
+	}
+
+	public int getAtomicNumber() {
+		return atomicNumber;
 	}
 }

@@ -14,7 +14,6 @@ public class canvasManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("Score:" + score);
 		if (score>2) {
 			congrats.SetActive (true);
 		}
