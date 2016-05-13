@@ -3,7 +3,8 @@ using System.Collections;
 
 public class gazeMovementManager : MonoBehaviour {
 	
-	public GameObject craftingPlanePrefab;
+	public GameObject gazeObjectPrefab;
+	private GameObject gazeObject;
 
 	void Start () {
 	}
@@ -15,7 +16,8 @@ public class gazeMovementManager : MonoBehaviour {
 		Destroy (GameObject.FindGameObjectWithTag ("gazePlane"));
 	}
 
-	public void createGazePlane() {
-		Instantiate (craftingPlanePrefab, new Vector3 (0, 0, 0), Quaternion.Euler (0, 0, 0));
+	public void createGazeObject() {
+		gazeObject = GameObject.Instantiate(gazeObjectPrefab, gameObject.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+		gazeObject.transform.parent = gameObject.transform;
 	}
 }

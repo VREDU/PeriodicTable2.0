@@ -3,7 +3,6 @@ using System.Collections;
 
 public class rayCastManager : MonoBehaviour {
 	public static Vector3 hitPoint, direction; //location of collision from the ray attached to main camera
-	public static bool gazeMovement;
 	private int layerMask;
 
 	// Use this for initialization

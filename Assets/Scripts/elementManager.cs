@@ -25,12 +25,12 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-			GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazePlane ();
+			GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
 			Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
 
 	public void reload() {
-		GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazePlane ();
+		GameObject.FindGameObjectWithTag ("gazePlaneHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
 		Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
 }
