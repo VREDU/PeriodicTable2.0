@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
-	//public int atomicNumber;
 	public string elementName;
 	public Text elementText;
 	public GameObject atomPrefab, atomSpawn;

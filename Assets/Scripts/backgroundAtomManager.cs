@@ -17,9 +17,9 @@ public class backgroundAtomManager : MonoBehaviour {
 	}
 
 	public Vector3 randomVector(){
-		x = Random.Range (-2, 2);
-		y = Random.Range (-2, 2);
-		z = Random.Range (-2, 2);
+		x = Random.Range (-1, 1);
+		y = Random.Range (-1, 1);
+		z = Random.Range (-1, 1);
 		return new Vector3 (x, y, z);
 	}
 }

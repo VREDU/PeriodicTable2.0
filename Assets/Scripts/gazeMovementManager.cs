@@ -11,7 +11,7 @@ public class gazeMovementManager : MonoBehaviour {
 
 	void Update () {
 	}
-	//need to change how this is being done
+
 	public void destroyGazeMode() {
 		Destroy (GameObject.FindGameObjectWithTag ("gazePlane"));
 	}
