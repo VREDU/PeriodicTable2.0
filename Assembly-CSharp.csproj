@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A28EC16E-B21E-5E62-6F5C-B44678CA01CF}</ProjectGuid>
+    <ProjectGuid>{2B89333D-7AE9-1957-3547-897F4CE5A440}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
      <Compile Include="Assets\Scripts\rayCastManager.cs" />
      <Compile Include="Assets\Scripts\scoreManager.cs" />
+     <Compile Include="Assets\atomTitleManager.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
