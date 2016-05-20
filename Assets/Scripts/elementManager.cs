@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
 	public string elementName;
-	public GameObject atomPrefab, atomSpawn;
+	public GameObject atomPrefab;
 	private Transform element;
 	private Vector3 offset;
 

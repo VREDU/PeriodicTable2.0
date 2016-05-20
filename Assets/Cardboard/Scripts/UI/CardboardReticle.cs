@@ -91,7 +91,9 @@ public class CardboardReticle : MonoBehaviour, ICardboardPointer {
   /// the user is looking at, and the intersectionPosition is the intersection
   /// point of the ray sent from the camera on the object.
   public void OnGazeStart(Camera camera, GameObject targetObject, Vector3 intersectionPosition) {
-    SetGazeTarget(intersectionPosition);
+		if (targetObject.tag == "selectable") {
+			SetGazeTarget (intersectionPosition);
+		}
   }
 
   /// Called every frame the user is still looking at a valid GameObject. This
@@ -101,7 +103,9 @@ public class CardboardReticle : MonoBehaviour, ICardboardPointer {
   /// looking at, and the intersectionPosition is the intersection point of the
   /// ray sent from the camera on the object.
   public void OnGazeStay(Camera camera, GameObject targetObject, Vector3 intersectionPosition) {
-    SetGazeTarget(intersectionPosition);
+		if (targetObject.tag == "selectable") {
+			SetGazeTarget (intersectionPosition);
+		}
   }
 
   /// Called when the user's look no longer intersects an object previously
