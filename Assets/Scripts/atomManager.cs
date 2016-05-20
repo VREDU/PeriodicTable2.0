@@ -18,7 +18,7 @@ public class atomManager : MonoBehaviour {
 
 	void Update () {
 		if (shooter) {
-			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction*2, step);
+			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
 		}
 		if (GameObject.FindWithTag ("gazePlane") == null && fired == false) {
 				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed*rayCastManager.direction, ForceMode.Impulse);

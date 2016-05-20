@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
 	public string elementName;
-	public Text elementText;
 	public GameObject atomPrefab, atomSpawn;
 	private Transform element;
 	private Vector3 offset;
@@ -12,7 +11,6 @@ public class elementManager : MonoBehaviour {
 	void Start () {
 		element = GetComponent<Transform> ();
 		offset = new Vector3 (0, 0, -1);
-		elementText.text = "";
 	}
 		
 	void Update () {
@@ -20,7 +18,6 @@ public class elementManager : MonoBehaviour {
 
 	public void SetGazedAt(bool gazedAt) {
 		GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.white;
-		elementText.text = gazedAt ? elementName : "";
 	}
 
 	public void selectElement() {
