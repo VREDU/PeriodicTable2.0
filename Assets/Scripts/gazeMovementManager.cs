@@ -13,7 +13,7 @@ public class gazeMovementManager : MonoBehaviour {
 	}
 
 	public void destroyGazeMode() {
-		Destroy (GameObject.FindGameObjectWithTag ("gazePlane"));
+		Destroy (GameObject.FindGameObjectWithTag ("gazeObject"));
 	}
 
 	public void createGazeObject() {

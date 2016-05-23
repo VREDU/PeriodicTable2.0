@@ -13,13 +13,13 @@ public class atomManager : MonoBehaviour {
 	void Start () {
 		fired = false;
 		step = speed * Time.deltaTime;
-		fireSpeed = 18;
+		fireSpeed = 10;
 	}
 
 	void Update () {
 
 		if (fired == false) {
-			if (GameObject.FindWithTag ("gazePlane") == null) {
+			if (GameObject.FindWithTag ("gazeObject") == null) {
 				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed * rayCastManager.direction, ForceMode.Impulse);
 				fired = true;
 			}

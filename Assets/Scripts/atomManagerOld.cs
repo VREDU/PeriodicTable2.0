@@ -21,7 +21,7 @@ public class atomManagerOld : MonoBehaviour {
 		if (stable == false && moveControl == false) {
 			Destroy (gameObject);
 		}
-		if (GameObject.FindWithTag ("gazePlane") == null) {
+		if (GameObject.FindWithTag ("gazeObject") == null) {
 			if (moveControl == true) {
 				//gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), 10, ForceMode.Impulse);
 				gameObject.GetComponent<Rigidbody> ().AddForce (10*rayCastManager.direction, ForceMode.Impulse);

@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\atomManagerOld.cs" />
      <Compile Include="Assets\Scripts\backgroundAtomManager.cs" />
      <Compile Include="Assets\Scripts\boundaryManager.cs" />
+     <Compile Include="Assets\Scripts\cameraManager.cs" />
      <Compile Include="Assets\Scripts\canvasManager.cs" />
      <Compile Include="Assets\Scripts\craftingManager.cs" />
      <Compile Include="Assets\Scripts\elementManager.cs" />
@@ -86,8 +87,6 @@
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
      <Compile Include="Assets\Scripts\rayCastManager.cs" />
      <Compile Include="Assets\Scripts\scoreManager.cs" />
-     <Compile Include="Assets\atomTitleManager.cs" />
-     <Compile Include="Assets\cameraManager.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
@@ -99,7 +98,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
-     <None Include="Assets\Text Shader.shader" />
+     <None Include="Assets\Text\Text Shader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
      <None Include="Assets\Cardboard\Resources\UI\CardboardReticleShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
