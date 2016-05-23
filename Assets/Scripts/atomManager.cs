@@ -6,7 +6,7 @@ public class atomManager : MonoBehaviour {
 	public int atomicNumber;
 	private int fireSpeed;
 	private float step; //step = speed * Time.deltaTime
-	private bool fired; //flag if atom should move where user is looking
+	public bool fired; //flag if atom should move where user is looking
 	public bool compound, shooter; //compound is to see if hydrogen is attached to another hydrogen, shooter atoms are shot by user
 	private Vector3 hitPoint; //hitPoint is where the user is looking at
 
@@ -17,12 +17,15 @@ public class atomManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (shooter) {
-			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
-		}
-		if (GameObject.FindWithTag ("gazePlane") == null && fired == false) {
-				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed*rayCastManager.direction, ForceMode.Impulse);
+
+		if (fired == false) {
+			if (GameObject.FindWithTag ("gazePlane") == null) {
+				gameObject.GetComponent<Rigidbody> ().AddForce (fireSpeed * rayCastManager.direction, ForceMode.Impulse);
 				fired = true;
+			}
+			if (shooter) {
+				transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
+			}
 		}
 	}
 		

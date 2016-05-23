@@ -12,6 +12,7 @@ public class rayCastManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Cursor.visible = false;
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 100f, layerMask)) {
 			hitPoint = hit.point;
