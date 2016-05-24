@@ -17,7 +17,8 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void SetGazedAt(bool gazedAt) {
-		GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.white;
+		//GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.white;
+		GetComponent<Renderer>().material.color = Color.green;
 	}
 
 	public void selectElement() {
