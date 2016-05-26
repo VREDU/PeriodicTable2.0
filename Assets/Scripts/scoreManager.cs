@@ -3,15 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 public class scoreManager : MonoBehaviour {
 
-	public Text score;
+	public static int score;
 	// Use this for initialization
 	void Start () {
-		score = GetComponent<Text> ();
+		//canvasManager.score = score;
 	
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-		score.text = canvasManager.score.ToString ();
+		GetComponent<TextMesh>().text=score.ToString();
 	}
 }

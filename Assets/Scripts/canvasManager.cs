@@ -8,17 +8,22 @@ public class canvasManager : MonoBehaviour {
 	public static int score;
 
 	void Start () {
-	
+		//score = 0;
 	}
 
 	void Update () {
-		if (score>2) {
+		Debug.Log (score);
+		/*if (score>2) {
 			congrats.SetActive (true);
 			score = 0;
-		}
+		}*/
 	}
 
 	public void playAgain() {
 		SceneManager.LoadScene(0);
+	}
+
+	public void startGame() {
+		score = 0;
 	}
 }
