@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{920A7C76-BB52-19E2-B378-6A69B2C44F72}</ProjectGuid>
+    <ProjectGuid>{910B4931-E768-EB89-F858-0A1C8207C113}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\gazeMovementManager.cs" />
      <Compile Include="Assets\Scripts\rayCastManager.cs" />
      <Compile Include="Assets\Scripts\scoreManager.cs" />
+     <Compile Include="Assets\periodSelector.cs" />
      <Compile Include="Assets\timeManager.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
