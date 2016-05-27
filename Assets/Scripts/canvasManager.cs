@@ -8,7 +8,7 @@ public class canvasManager : MonoBehaviour {
 	public static int score;
 
 	void Start () {
-		//score = 0;
+		gameOver = true;
 	}
 
 	void Update () {
@@ -26,4 +26,9 @@ public class canvasManager : MonoBehaviour {
 	public void startGame() {
 		score = 0;
 	}
+
+	public void home() {
+		SceneManager.LoadScene (0);
+	}
+
 }

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
 	public string elementName;
-	public GameObject atomPrefab;
+	public GameObject atomPrefab, atoms_boundary;
 	private Transform element;
 	private Vector3 offset;
 
@@ -21,12 +21,11 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-		GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
-		Instantiate (atomPrefab, element.position + offset, element.rotation);
-	}
-
-	public void reload() {
-		GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
-		Instantiate (atomPrefab, element.position + offset, element.rotation);
+		if (canvasManager.gameOver == true) {
+			atoms_boundary.SetActive (true);
+		}
+			canvasManager.gameOver = false;
+			GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
+			Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
 }
