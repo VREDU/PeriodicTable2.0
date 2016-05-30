@@ -12,11 +12,14 @@ public class timeManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		timeLeft -= Time.deltaTime;
-		GetComponent<TextMesh>().text=timeLeft.ToString("0");
+		if (timeLeft > 0) {
+			timeLeft -= Time.deltaTime;
+			GetComponent<TextMesh> ().text = timeLeft.ToString ("0");
+		}
 
 		if (timeLeft <= 0) {
 			gameOver = true;
 		}
+
 	}
 }

@@ -3,12 +3,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class canvasManager : MonoBehaviour {
-	public GameObject congratsTitle, congratsBackground, scoreTitle, timeTitle, instructionsTop, instructionsBottom, tryAgain;
+	public GameObject congratsBackground, scoreTitle, timeTitle, instructionsTop, instructionsBottom, tryAgain;
 	public static bool playing;
 	public static int score;
 
 	void Start () {
-		playing = false;
 	}
 
 	void Update () {
@@ -21,11 +20,14 @@ public class canvasManager : MonoBehaviour {
 		}
 
 		if (scoreManager.score > 4) {
-			congratsTitle.SetActive (true);
 			congratsBackground.SetActive (true);
+			scoreTitle.SetActive (false);
+			timeTitle.SetActive (false);
 		}
 
 		if (timeManager.gameOver) {
+			scoreTitle.SetActive (false);
+			timeTitle.SetActive (false);
 			congratsBackground.SetActive (true);
 			tryAgain.SetActive (true);
 		}
@@ -47,8 +49,18 @@ public class canvasManager : MonoBehaviour {
 		if (scoreManager.score > 4) {
 			SceneManager.LoadScene (2);
 		} else {
+			standardSettings ();
 			SceneManager.LoadScene (1);
+			playing = false;
 		}
+	}
+
+	public void standardSettings() {
+		instructionsTop.SetActive (true);
+		instructionsBottom.SetActive (true);
+		tryAgain.SetActive (false);
+		timeManager.gameOver = false;
+		score = 0;
 	}
 
 }
