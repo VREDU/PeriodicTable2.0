@@ -21,8 +21,9 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-		if (canvasManager.playing == false) {
-			canvasManager.playing = true;
+		//change this shit
+		if (canvasManager.gameStart == false) {
+			canvasManager.gameStart = true;
 		}
 			GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
 			Instantiate (atomPrefab, element.position + offset, element.rotation);

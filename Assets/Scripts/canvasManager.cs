@@ -4,22 +4,25 @@ using UnityEngine.SceneManagement;
 
 public class canvasManager : MonoBehaviour {
 	public GameObject congratsBackground, scoreTitle, timeTitle, instructionsTop, instructionsBottom, tryAgain;
-	public static bool playing;
+	public static bool gameStart;
 	public static int score;
+	public static float timeLeft;
 
 	void Start () {
+		timeLeft = 60f;
 	}
 
 	void Update () {
-		Debug.Log (scoreManager.score);
-		if (playing) {
+		Debug.Log (timeLeft);
+		if (gameStart) {
+			timeLeft -= Time.deltaTime;
 			scoreTitle.SetActive (true);
 			timeTitle.SetActive (true);
 			instructionsTop.SetActive (false);
 			instructionsBottom.SetActive (false);
 		}
 
-		if (scoreManager.score > 4) {
+		if (score > 4) {
 			congratsBackground.SetActive (true);
 			scoreTitle.SetActive (false);
 			timeTitle.SetActive (false);
@@ -46,12 +49,12 @@ public class canvasManager : MonoBehaviour {
 	}
 
 	public void nextSteps() {
-		if (scoreManager.score > 4) {
+		if (score > 4) {
 			SceneManager.LoadScene (2);
 		} else {
 			standardSettings ();
 			SceneManager.LoadScene (1);
-			playing = false;
+			gameStart = false;
 		}
 	}
 

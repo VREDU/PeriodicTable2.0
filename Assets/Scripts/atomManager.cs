@@ -39,7 +39,7 @@ public class atomManager : MonoBehaviour {
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
 			//if it was shot it will increase the molecules the user made
 			if (shooter) {
-				++scoreManager.score;
+				++canvasManager.score;
 			}
 			shooter = false;
 			c.gameObject.GetComponent<atomManager> ().setShooter (false);
