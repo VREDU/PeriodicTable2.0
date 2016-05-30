@@ -21,10 +21,9 @@ public class elementManager : MonoBehaviour {
 	}
 
 	public void selectElement() {
-		if (canvasManager.gameOver == true) {
-			atoms_boundary.SetActive (true);
+		if (canvasManager.playing == false) {
+			canvasManager.playing = true;
 		}
-			canvasManager.gameOver = false;
 			GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
 			Instantiate (atomPrefab, element.position + offset, element.rotation);
 	}
