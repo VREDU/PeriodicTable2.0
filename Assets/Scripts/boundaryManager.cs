@@ -12,8 +12,9 @@ public class boundaryManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	void OnCollisionEnter(Collision other) {
 		other.gameObject.GetComponent<atomManager> ().setShooter(false);
-		}
+	}
 }
 

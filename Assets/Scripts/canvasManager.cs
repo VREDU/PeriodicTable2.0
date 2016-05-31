@@ -8,31 +8,26 @@ public class canvasManager : MonoBehaviour {
 	public static int score;
 	public static float timeLeft;
 
+	Animator anim;
+
 	void Start () {
 		timeLeft = 60f;
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update () {
 		Debug.Log (timeLeft);
 		if (gameStart) {
 			timeLeft -= Time.deltaTime;
-			scoreTitle.SetActive (true);
-			timeTitle.SetActive (true);
-			instructionsTop.SetActive (false);
-			instructionsBottom.SetActive (false);
+			anim.SetTrigger ("playing");
 		}
 
 		if (score > 4) {
-			congratsBackground.SetActive (true);
-			scoreTitle.SetActive (false);
-			timeTitle.SetActive (false);
+			anim.SetTrigger ("gameOver");
 		}
 
-		if (timeManager.gameOver) {
-			scoreTitle.SetActive (false);
-			timeTitle.SetActive (false);
-			congratsBackground.SetActive (true);
-			tryAgain.SetActive (true);
+		if (timeLeft<=0) {
+			anim.SetTrigger ("gameOver");
 		}
 	}
 
@@ -52,18 +47,8 @@ public class canvasManager : MonoBehaviour {
 		if (score > 4) {
 			SceneManager.LoadScene (2);
 		} else {
-			standardSettings ();
 			SceneManager.LoadScene (1);
 			gameStart = false;
 		}
 	}
-
-	public void standardSettings() {
-		instructionsTop.SetActive (true);
-		instructionsBottom.SetActive (true);
-		tryAgain.SetActive (false);
-		timeManager.gameOver = false;
-		score = 0;
-	}
-
 }
