@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
-	public GameObject atomPrefab, atoms_boundary;
-	public string elementName;
+	public GameObject atomPrefab;
 	private Transform element;
 	private Vector3 offset;
 

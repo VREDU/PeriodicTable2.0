@@ -45,7 +45,7 @@ public class canvasManager : MonoBehaviour {
 	//if won go to next level else try again
 	public void nextSteps() {
 		if (score >= goal) {
-			SceneManager.LoadScene (2);
+			SceneManager.LoadScene (1);
 		} else {
 			SceneManager.LoadScene (1);
 		}

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class shooterManager : MonoBehaviour {
 	public float gazeSpeed; //speed object approaches gaze
-	public int atomicNumber;
 	private int fireSpeed;
 	private float step; //step = speed * Time.deltaTime
 	private bool fired, shooter;
@@ -49,9 +48,5 @@ public class shooterManager : MonoBehaviour {
 
 	public void setShooter(bool isShooter) {
 		shooter = isShooter;
-	}
-		
-	public int getAtomicNumber() {
-		return atomicNumber;
 	}
 }
