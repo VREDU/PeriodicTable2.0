@@ -71,7 +71,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
-     <None Include="Assets\MentalDreamsAssets\SkyboxPack\ReadMe!.txt" />
+     <None Include="Assets\Store Assets\MentalDreamsAssets\SkyboxPack\ReadMe!.txt" />
      <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
