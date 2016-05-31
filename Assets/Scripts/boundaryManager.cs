@@ -13,8 +13,11 @@ public class boundaryManager : MonoBehaviour {
 	
 	}
 
+	//users score doesn't increase if an atom bouncey off a wall then forms a compound
 	void OnCollisionEnter(Collision other) {
-		other.gameObject.GetComponent<atomManager> ().setShooter(false);
+		if (other.gameObject.tag == "shooter") {
+			other.gameObject.GetComponent<shooterManager> ().setShooter (false);
+		}
 	}
 }
 

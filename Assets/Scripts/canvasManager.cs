@@ -10,6 +10,7 @@ public class canvasManager : MonoBehaviour {
 	Animator anim; //controls when instructions, time, score and playagain/next level
 
 	void Start () {
+		score = 0;
 		goal = 5;
 		timeLeft = 60f;
 		anim = GetComponent<Animator> ();
@@ -23,7 +24,7 @@ public class canvasManager : MonoBehaviour {
 		}
 
 		if (score >= goal) {
-			anim.SetTrigger ("gameOver");
+			anim.SetTrigger ("gameOver"); 
 			playing = false;
 		}
 
