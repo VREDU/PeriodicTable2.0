@@ -4,6 +4,7 @@ using System.Collections;
 public class AtomManager : MonoBehaviour {
 	private Vector3 force;
 	private int x,y,z;
+	public int atomicNumber;
 	public bool background, diatomic;
 	private bool compound;
 
@@ -35,6 +36,10 @@ public class AtomManager : MonoBehaviour {
 
 	public bool isDiatomic() {
 		return diatomic;
+	}
+
+	public int getAtomicNumber() {
+		return atomicNumber;
 	}
 
 	public void setCompound(bool isCompound) {

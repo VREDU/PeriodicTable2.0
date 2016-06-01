@@ -47,7 +47,7 @@ public class canvasManager : MonoBehaviour {
 		if (score >= goal) {
 			SceneManager.LoadScene (1);
 		} else {
-			SceneManager.LoadScene (1);
+			SceneManager.LoadScene (2);
 		}
 	}
 }

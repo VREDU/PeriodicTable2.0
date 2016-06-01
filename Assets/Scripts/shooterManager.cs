@@ -29,7 +29,7 @@ public class shooterManager : MonoBehaviour {
 		
 	public void OnCollisionEnter(Collision c) {
 		//if it is another hydrogen atom that it is not a compound connect the atoms and add a random force
-		if (c.rigidbody != null && gameObject.GetComponent<AtomManager>().isDiatomic() && c.gameObject.GetComponent<AtomManager>().isDiatomic() && !gameObject.GetComponent<AtomManager> ().isCompound() && !c.gameObject.GetComponent<AtomManager>().isCompound()) {
+		if (c.rigidbody != null && gameObject.GetComponent<AtomManager>().isDiatomic() && c.gameObject.GetComponent<AtomManager>().isDiatomic() && !gameObject.GetComponent<AtomManager> ().isCompound() && !c.gameObject.GetComponent<AtomManager>().isCompound() && gameObject.GetComponent<AtomManager>().getAtomicNumber()== c.gameObject.GetComponent<AtomManager>().getAtomicNumber()) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
 			gameObject.GetComponent<AtomManager> ().setCompound (true);
