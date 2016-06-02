@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class elementManager : MonoBehaviour {
 	public GameObject atomPrefab;
-	private GameObject atom;
-	private Transform element;
-	private Vector3 offset;
 	public int compoundLimit;
+	private GameObject atom;
 	private int compoundsFormed;
+	private Transform objectTransform;
+	private Vector3 offset;
 
 	void Start () {
-		element = GetComponent<Transform> ();
+		objectTransform = GetComponent<Transform> ();
 		offset = new Vector3 (0, 0, -1); //spawns atom in front of element
 		compoundsFormed = 0;
 	}
@@ -20,24 +20,25 @@ public class elementManager : MonoBehaviour {
 		Debug.Log (compoundsFormed);
 	}
 
-	public void SetGazedAt(bool gazedAt) {
-		if (compoundsFormed < compoundLimit) {
-			GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.white;
-		} else {
-			GetComponent<Renderer> ().material.color = Color.black;
-		}
-	}
-
 	public void selectElement() {
-
+		//cant select elements when the round is over
 		if (canvasManager.playing == false) {
 			canvasManager.playing = true;
 		}
 
 		if (compoundLimit > compoundsFormed) {
 			GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
-			atom = Instantiate (atomPrefab, element.position + offset, element.rotation) as GameObject;
+			atom = Instantiate (atomPrefab, objectTransform.position + offset, objectTransform.rotation) as GameObject;
 			atom.transform.parent = gameObject.transform;
+		}
+	}
+
+
+	public void SetGazedAt(bool gazedAt) {
+		if (compoundsFormed < compoundLimit) {
+			GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.white;
+		} else {
+			GetComponent<Renderer> ().material.color = Color.black;
 		}
 	}
 
