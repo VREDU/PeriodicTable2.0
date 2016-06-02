@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class canvasManager : MonoBehaviour {
 	public static bool playing; //flag for if user is in a round
 	public static float timeLeft; //timeLeft before the round is over
-	public static int score; //users score
+	public static int score, nitrogenFormed, oxygenFormed, fluorineFormed; //users score
 	private int goal; //the score the user needs to obtain
 	Animator anim; //controls when instructions, time, score and playagain/next level
 
