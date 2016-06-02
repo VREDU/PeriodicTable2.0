@@ -75,7 +75,8 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardAndroidDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
-     <Compile Include="Assets\Scripts\AtomManager.cs" />
+     <Compile Include="Assets\Scripts\SaveLoad.cs" />
+     <Compile Include="Assets\Scripts\atomManager.cs" />
      <Compile Include="Assets\Scripts\boundaryManager.cs" />
      <Compile Include="Assets\Scripts\cameraManager.cs" />
      <Compile Include="Assets\Scripts\canvasManager.cs" />

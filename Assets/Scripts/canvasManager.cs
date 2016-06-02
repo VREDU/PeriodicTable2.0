@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class canvasManager : MonoBehaviour {
 	public static bool playing; //flag for if user is in a round
 	public static float timeLeft; //timeLeft before the round is over
-	public static int score , levelCount; //users score
+	public static int score , levelCount; //users score and number of levels in the game
 	private int goal; //the score the user needs to obtain
 	Animator anim; //controls when instructions, time, score and playagain/next level
 
@@ -24,18 +24,14 @@ public class canvasManager : MonoBehaviour {
 		}
 
 		if (score >= goal) {
-			anim.SetTrigger ("gameOver"); 
+			anim.SetTrigger ("gameOver"); //nextSteps button is shown
 			playing = false;
 		}
 
 		if (timeLeft<=0) {
-			anim.SetTrigger ("gameOver");
+			anim.SetTrigger ("gameOver"); //nextSteps button is Shown
 			playing = false;
 		}
-	}
-
-	public void playAgain() {
-		SceneManager.LoadScene(0);
 	}
 		
 	public void home() {

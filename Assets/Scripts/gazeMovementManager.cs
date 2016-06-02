@@ -2,15 +2,8 @@
 using System.Collections;
 
 public class gazeMovementManager : MonoBehaviour {
-	
-	public GameObject gazeObjectPrefab;
+	public GameObject gazeObjectPrefab; //This object will collide with gazeRay for gameObjects to move towards
 	private GameObject gazeObject;
-
-	void Start () {
-	}
-
-	void Update () {
-	}
 
 	public void destroyGazeMode() {
 		Destroy (GameObject.FindGameObjectWithTag ("gazeObject"));

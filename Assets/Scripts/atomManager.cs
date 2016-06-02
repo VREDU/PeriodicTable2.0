@@ -1,34 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AtomManager : MonoBehaviour {
-	private Vector3 force;
-	private int x,y,z;
-	public int atomicNumber;
-	public bool background, diatomic;
-	private bool compound;
+public class atomManager : MonoBehaviour {
 
-	// Use this for initialization
+	public bool background, diatomic;
+	public int atomicNumber;
+	private bool compound;
+	private int x, y;
+	private Vector3 force;
+
 	void Start () {
 		compound = false;
+		int x = -3;
+		int y = 3;
 
 		if (background) {
-			gameObject.GetComponent<Rigidbody> ().AddForce (randomVector (), ForceMode.Impulse);
-			gameObject.GetComponent<Rigidbody> ().AddTorque (randomVector ());
+			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range (x,y) ,Random.Range (x,y),Random.Range (x,y), ForceMode.Impulse);
+			gameObject.GetComponent<Rigidbody> ().AddTorque (Random.Range (x,y),Random.Range (x,y),Random.Range (x,y));
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	public Vector3 randomVector(){
-		x = Random.Range (-3, 3);
-		y = Random.Range (-3, 3);
-		z = Random.Range (-3, 3);
-		return new Vector3 (x, y, z);
-	}
+		
 
 	public bool isCompound() {
 		return compound;

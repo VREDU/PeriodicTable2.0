@@ -30,11 +30,11 @@ public class shooterManager : MonoBehaviour {
 		
 	public void OnCollisionEnter(Collision c) {
 		//if it is another hydrogen atom that it is not a compound connect the atoms and add a random force
-		if (c.rigidbody != null && gameObject.GetComponent<AtomManager>().isDiatomic() && c.gameObject.GetComponent<AtomManager>().isDiatomic() && !gameObject.GetComponent<AtomManager> ().isCompound() && !c.gameObject.GetComponent<AtomManager>().isCompound() && gameObject.GetComponent<AtomManager>().getAtomicNumber()== c.gameObject.GetComponent<AtomManager>().getAtomicNumber()) {
+		if (c.rigidbody != null && gameObject.GetComponent<atomManager>().isDiatomic() && c.gameObject.GetComponent<atomManager>().isDiatomic() && !gameObject.GetComponent<atomManager> ().isCompound() && !c.gameObject.GetComponent<atomManager>().isCompound() && gameObject.GetComponent<atomManager>().getAtomicNumber()== c.gameObject.GetComponent<atomManager>().getAtomicNumber()) {
 			var joint = gameObject.AddComponent<FixedJoint> ();
 			joint.connectedBody = c.rigidbody;
-			gameObject.GetComponent<AtomManager> ().setCompound (true);
-			c.gameObject.GetComponent<AtomManager> ().setCompound (true);
+			gameObject.GetComponent<atomManager> ().setCompound (true);
+			c.gameObject.GetComponent<atomManager> ().setCompound (true);
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
 			//if it was shot it will increase the score
 			if (shooter) {
