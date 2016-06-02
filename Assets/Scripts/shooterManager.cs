@@ -7,16 +7,17 @@ public class shooterManager : MonoBehaviour {
 	private float step; //step = speed * Time.deltaTime
 	private bool fired, shooter;
 	private Vector3 hitPoint; //hitPoint is where the user is looking at
+	private elementManager parentElementManager;
 
 	void Start () {
 		fired = false; //atom should move with gaze
 		step = gazeSpeed * Time.deltaTime;
 		fireSpeed = 10;
 		shooter = true;
+		parentElementManager = transform.parent.GetComponent<elementManager> ();
 	}
 
 	void Update () {
-		Debug.Log (fired);
 		if (fired == false) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
 
@@ -38,6 +39,7 @@ public class shooterManager : MonoBehaviour {
 			//if it was shot it will increase the score
 			if (shooter) {
 				++canvasManager.score;
+				parentElementManager.incrementCompounds ();
 			}
 			shooter = false;
 		}

@@ -17,10 +17,15 @@ public class elementManager : MonoBehaviour {
 	}
 		
 	void Update () {
+		Debug.Log (compoundsFormed);
 	}
 
 	public void SetGazedAt(bool gazedAt) {
-		GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.white;
+		if (compoundsFormed < compoundLimit) {
+			GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.white;
+		} else {
+			GetComponent<Renderer> ().material.color = Color.black;
+		}
 	}
 
 	public void selectElement() {
@@ -34,5 +39,9 @@ public class elementManager : MonoBehaviour {
 			atom = Instantiate (atomPrefab, element.position + offset, element.rotation) as GameObject;
 			atom.transform.parent = gameObject.transform;
 		}
+	}
+
+	public void incrementCompounds() {
+		compoundsFormed = ++compoundsFormed;
 	}
 }
