@@ -3,22 +3,27 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class periodSelector : MonoBehaviour {
-	public GameObject p1;
+	public GameObject elements;
+	public int levelNumber;
 	// Use this for initialization
 	void Start () {
+		
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	public void period1Hover(bool gazedAt) {
-		p1.SetActive (gazedAt);
+		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
+			elements.SetActive (gazedAt);
+		}
 	}
 
-	public void period1Select() {
-		SceneManager.LoadScene(1);
+	public void levelLoad() {
+		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
+			SceneManager.LoadScene (levelNumber);
+		}
 	}
 }

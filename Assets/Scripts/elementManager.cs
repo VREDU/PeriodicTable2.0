@@ -17,7 +17,6 @@ public class elementManager : MonoBehaviour {
 	}
 		
 	void Update () {
-		Debug.Log (compoundsFormed);
 	}
 
 	public void selectElement() {
