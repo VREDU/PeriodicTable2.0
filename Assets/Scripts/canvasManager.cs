@@ -12,7 +12,7 @@ public class canvasManager : MonoBehaviour {
 	void Start () {
 		playing = false;
 		timeLeft = 60f;
-		shotsLeft = 10;
+		shotsLeft = 2;
 		score = 0;
 		levelCount = 3;//this will change with SaveLoad
 		compoundGoal = 1;

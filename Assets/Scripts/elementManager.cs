@@ -17,13 +17,12 @@ public class elementManager : MonoBehaviour {
 	}
 		
 	public void selectElement() {
-		canvasManager.shotsLeft--;
 		//cant select elements when the round is over
 		if (canvasManager.playing == false) {
 			canvasManager.playing = true;
 		}
 
-		if (compoundLimit > compoundsFormed) {
+		if (compoundLimit > compoundsFormed && canvasManager.shotsLeft>=1) {
 			GameObject.FindGameObjectWithTag ("gazeObjectHolder").GetComponent<gazeMovementManager> ().createGazeObject ();
 			atom = Instantiate (atomPrefab, objectTransform.position + offset, objectTransform.rotation) as GameObject;
 			atom.transform.parent = gameObject.transform;
