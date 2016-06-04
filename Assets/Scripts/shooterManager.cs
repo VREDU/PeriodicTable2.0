@@ -18,6 +18,7 @@ public class shooterManager : MonoBehaviour {
 	}
 
 	void Update () {
+		Debug.Log (shooter);
 		if (fired == false) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
 
