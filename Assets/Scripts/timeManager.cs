@@ -4,6 +4,6 @@ using System.Collections;
 public class timeManager : MonoBehaviour {
 
 	void Update () {
-			GetComponent<TextMesh> ().text = canvasManager.timeLeft.ToString ("0");
+		GetComponent<TextMesh> ().text = canvasManager.shotsLeft.ToString ("0");
 	}
 }

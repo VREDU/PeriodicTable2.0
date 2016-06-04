@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 public class canvasManager : MonoBehaviour {
 	public static bool playing; //flag for if user is in a round
 	public static float timeLeft; //timeLeft before the round is over
-	public static int score , levelCount; //users score and number of levels in the game
+	public static int score , levelCount, shotsLeft; //users score and number of levels in the game
 	private int compoundGoal; //the score the user needs to obtain
 	Animator anim; //controls when instructions, time, score and playagain/next level
 
 	void Start () {
-		playing = true;
+		playing = false;
 		timeLeft = 60f;
+		shotsLeft = 10;
 		score = 0;
 		levelCount = 3;//this will change with SaveLoad
 		compoundGoal = 1;
@@ -20,7 +21,7 @@ public class canvasManager : MonoBehaviour {
 
 	void Update () {
 		if (playing) {
-			timeLeft -= Time.deltaTime;
+			//timeLeft -= Time.deltaTime;
 			anim.SetTrigger ("playing"); //score and timeLeft are shown to user
 		}
 
@@ -29,7 +30,7 @@ public class canvasManager : MonoBehaviour {
 			playing = false;
 		}
 
-		if (timeLeft<=0) {
+		if (shotsLeft==0) {
 			anim.SetTrigger ("gameOver"); //nextSteps button is Shown
 			playing = false;
 		}

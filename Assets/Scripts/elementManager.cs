@@ -16,10 +16,8 @@ public class elementManager : MonoBehaviour {
 		compoundsFormed = 0;
 	}
 		
-	void Update () {
-	}
-
 	public void selectElement() {
+		canvasManager.shotsLeft--;
 		//cant select elements when the round is over
 		if (canvasManager.playing == false) {
 			canvasManager.playing = true;
