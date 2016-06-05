@@ -45,6 +45,7 @@ public class canvasManager : MonoBehaviour {
 		if (score >= compoundGoal) {
 			SceneManager.LoadScene ((SceneManager.GetActiveScene().buildIndex+1)%3);
 			SaveLoad.saveLoad.increaseCurrentLevel();
+			SaveLoad.saveLoad.Save ();
 		} else {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		}

@@ -6,7 +6,15 @@ public class periodSelector : MonoBehaviour {
 	public GameObject elements;
 	public int levelNumber;
 
+	void Start() {
+		if (SaveLoad.saveLoad != null) {
+			Debug.Log ("periodSelector:SaveLoad.load()");
+			SaveLoad.saveLoad.Load ();
+		}
+	}
+
 	public void period1Hover(bool gazedAt) {
+
 		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
 			elements.SetActive (gazedAt);
 		}
