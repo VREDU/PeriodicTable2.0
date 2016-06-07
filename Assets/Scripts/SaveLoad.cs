@@ -40,12 +40,10 @@ public  class SaveLoad:MonoBehaviour {
 	public void Load() {
 		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) 
 		{
-			Debug.Log ("SaveLoad:file exists");
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
 			PlayerData data = (PlayerData)bf.Deserialize(file);
 			file.Close();
-			Debug.Log (data.currentLevel);
 			currentLevel = data.currentLevel;
 		}
 	}

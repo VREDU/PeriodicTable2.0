@@ -7,7 +7,6 @@ public class periodSelector : MonoBehaviour {
 	public int levelNumber;
 
 	void Start() {
-			Debug.Log ("periodSelector:SaveLoad.load()");
 			SaveLoad.saveLoad.Load ();
 	}
 

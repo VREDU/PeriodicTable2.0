@@ -11,7 +11,6 @@ public class rayCastManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("curreentlevel:"+SaveLoad.saveLoad.getCurrentLevel());
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 100f, layerMask)) {
 			hitPoint = hit.point;

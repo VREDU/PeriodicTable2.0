@@ -18,7 +18,6 @@ public class shooterManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (shooter);
 		if (fired == false) {
 			transform.position = Vector3.MoveTowards (transform.position, rayCastManager.hitPoint + rayCastManager.direction, step);
 
@@ -30,11 +29,9 @@ public class shooterManager : MonoBehaviour {
 	}
 		
 	public void OnCollisionEnter(Collision c) {
-
-		if (gameObject.tag == "shooter") {
+		if (shooter) {
 			canvasManager.shotsLeft--;
-			gameObject.GetComponent<shooterManager> ().setShooter (false);
-			gameObject.tag = "Untagged";
+			shooter = false;
 		}
 
 		//if it is another hydrogen atom that it is not a compound connect the atoms and add a random force
@@ -45,11 +42,10 @@ public class shooterManager : MonoBehaviour {
 			c.gameObject.GetComponent<atomManager> ().setCompound (true);
 			gameObject.GetComponent<Rigidbody> ().AddForce (Random.Range(-5,5), Random.Range(-5,5), Random.Range(-5,5), ForceMode.Impulse);
 			//if it was shot it will increase the score
-			if (shooter) {
+			if (gameObject.tag == "shooter") {
 				++canvasManager.compoundsFormed;
 				parentElementManager.incrementCompounds ();
 			}
-			shooter = false;
 		}
 	}
 
