@@ -2,8 +2,17 @@
 using System.Collections;
 using UnityEngine.UI;
 public class scoreManager : MonoBehaviour {
-	
+
+	private canvasManager canvas;
+	private int compoundGoal, compoundsLeft;
+
+	void Start() {
+		canvas = transform.parent.GetComponent<canvasManager> ();
+		compoundGoal = canvas.getCompoundGoal ();
+	}
+
 	void Update () {
-		GetComponent<TextMesh>().text= "Homonuclear diatomic \n molecules formed:" + canvasManager.compoundsFormed.ToString();
+		compoundsLeft = compoundGoal - canvasManager.compoundsFormed;
+		GetComponent<TextMesh> ().text = compoundsLeft + "\ndiatomic moleculues\n left to form";
 	}
 }

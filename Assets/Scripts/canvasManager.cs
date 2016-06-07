@@ -52,4 +52,8 @@ public class canvasManager : MonoBehaviour {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		}
 	}
+
+	public int getCompoundGoal() {
+		return compoundGoal;
+	}
 }

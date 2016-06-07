@@ -15,6 +15,12 @@ public class elementManager : MonoBehaviour {
 		offset = new Vector3 (0, 0, -1); //spawns atom in front of element
 		compoundsFormed = 0;
 	}
+
+	void Update() {
+		if (compoundsFormed >= compoundLimit) {
+			GetComponent<Renderer> ().material.color = Color.black;
+		}
+	}
 		
 	public void selectElement() {
 		//cant select elements when the round is over
@@ -33,8 +39,6 @@ public class elementManager : MonoBehaviour {
 	public void SetGazedAt(bool gazedAt) {
 		if (compoundsFormed < compoundLimit) {
 			GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.white;
-		} else {
-			GetComponent<Renderer> ().material.color = Color.black;
 		}
 	}
 
