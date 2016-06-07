@@ -4,6 +4,6 @@ using UnityEngine.UI;
 public class scoreManager : MonoBehaviour {
 	
 	void Update () {
-		GetComponent<TextMesh>().text=canvasManager.score.ToString();
+		GetComponent<TextMesh>().text= "Homonuclear diatomic \n molecules formed:" + canvasManager.compoundsFormed.ToString();
 	}
 }

@@ -8,6 +8,7 @@ public class boundaryManager : MonoBehaviour {
 		if (other.gameObject.tag == "shooter") {
 			canvasManager.shotsLeft--;
 			other.gameObject.GetComponent<shooterManager> ().setShooter (false);
+			other.gameObject.tag = "Untagged";
 		}
 	}
 }
