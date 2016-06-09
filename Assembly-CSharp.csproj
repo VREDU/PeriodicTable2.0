@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\scoreManager.cs" />
      <Compile Include="Assets\Scripts\shooterManager.cs" />
      <Compile Include="Assets\Scripts\timeManager.cs" />
+     <Compile Include="Assets\hoverSelect.cs" />
      <Compile Include="Assets\periodManager.cs" />
      <Compile Include="Assets\startCanvasManager.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />

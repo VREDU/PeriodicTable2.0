@@ -19,8 +19,8 @@ public class canvasManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (compoundsFormed);
 
+		Debug.Log (1.0f / Time.deltaTime);
 		if (playing) {
 			anim.SetTrigger ("playing"); //score and timeLeft are shown to user
 		}

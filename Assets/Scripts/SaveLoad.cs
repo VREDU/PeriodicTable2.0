@@ -4,7 +4,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public  class SaveLoad:MonoBehaviour {
+public class SaveLoad:MonoBehaviour {
 
 	public static SaveLoad saveLoad;
 	public int currentLevel;

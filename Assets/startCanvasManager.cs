@@ -13,6 +13,8 @@ public class startCanvasManager : MonoBehaviour {
 		if (SaveLoad.saveLoad.getCurrentLevel () >= 2) {
 			Period2.SetActive (true);
 		}
+
+		Debug.Log (1.0f / Time.deltaTime);
 	
 	}
 }
