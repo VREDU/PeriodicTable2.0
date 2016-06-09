@@ -31,7 +31,7 @@ public class canvasManager : MonoBehaviour {
 		}
 
 		if (shotsLeft==0) {
-			anim.SetTrigger ("gameOver"); //nextSteps button is Shown
+			anim.SetTrigger ("lose"); //nextSteps button is Shown
 			playing = false;
 		}
 	}
