@@ -8,7 +8,6 @@ public class periodSelector : MonoBehaviour {
 	private float step;
 
 	void Start() {
-			SaveLoad.saveLoad.Load ();
 	}
 		
 
