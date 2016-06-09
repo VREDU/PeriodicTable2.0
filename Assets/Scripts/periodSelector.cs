@@ -4,21 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class periodSelector : MonoBehaviour {
 	public GameObject elements;
+	public Transform target;
 	public int levelNumber;
+	public float speed;
+	private float step;
 
 	void Start() {
 			SaveLoad.saveLoad.Load ();
-	}
 
-	public void period1Hover(bool gazedAt) {
-		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
-			elements.SetActive (gazedAt);
-		}
+	}
+		
+
+	public void periodHover(bool gazedAt) {
+		GetComponent<Renderer> ().material.color = gazedAt ? Color.green : Color.black;
 	}
 
 	public void levelLoad() {
-		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
 			SceneManager.LoadScene (levelNumber);
-		}
 	}
 }
