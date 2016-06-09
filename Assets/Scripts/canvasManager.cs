@@ -30,7 +30,7 @@ public class canvasManager : MonoBehaviour {
 			playing = false;
 		}
 
-		if (shotsLeft==0) {
+		if (shotsLeft<=0) {
 			anim.SetTrigger ("lose"); //nextSteps button is Shown
 			playing = false;
 		}
