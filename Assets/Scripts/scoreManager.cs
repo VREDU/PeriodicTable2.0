@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class scoreManager : MonoBehaviour {
+public class shotsManager : MonoBehaviour {
 
+	public GameObject canvasObject;
 	private canvasManager canvas;
 	private int compoundGoal, compoundsLeft;
 
 	void Start() {
-		canvas = transform.parent.GetComponent<canvasManager> ();
+		canvas = canvasObject.GetComponent<canvasManager> ();
 		compoundGoal = canvas.getCompoundGoal ();
 	}
 

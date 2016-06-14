@@ -7,7 +7,10 @@ public class periodSelector : MonoBehaviour {
 	public float speed;
 	private float step;
 
-	void Start() {
+	void Update() {
+		if (SaveLoad.saveLoad.getCurrentLevel () >= levelNumber) {
+			gameObject.SetActive (true);
+		}
 	}
 		
 
